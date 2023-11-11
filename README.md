@@ -12,3 +12,7 @@
 
 ## Unit Tests
 1. Run "pytest test_inputs.py" to run the input validation tests.
+<video src="Visualize%20crossover.mp4" controls title="Visualize Crossover"></video>
+<video src="Visualize%20Backtest.mp4" controls title="Visualize Backtest"></video>
+![Backtest Results](<Backtest Results.png>)
+![Bullish Crossover Signal](<Bullish Crossover Signal.png>)

@@ -50,6 +50,8 @@ df["crossover"] = np.vectorize(find_crossover)(
 )
 signal = df[df["crossover"] == "bullish crossover"].copy()
 
+print(signal)
+
 
 # Creating backtest of position and strategy classes
 class Position:
@@ -166,17 +168,21 @@ class Strategy:
 sma_crossover_strategy = Strategy(
     df,
     starting_balance=10000,
-    sl_percent=decimal.Decimal(0.02),
-    tp_percent=decimal.Decimal(0.05),
+    sl_percent=decimal.Decimal(2.0),
+    tp_percent=decimal.Decimal(5.0),
 )
 result = sma_crossover_strategy.run()
 
 print(result)
 
 # Visualize
+
+# Visualize Backtest
 new_fig = px.line(result, x="close_datetime", y="pnl")
 new_fig.show()
 
+
+# Visualize Crossover
 df_long = pd.melt(
     df,
     id_vars=["datetime"],
